@@ -8,11 +8,11 @@ import { ListingItemResolver } from './resolvers/listing-item.resolver';
 const routes: Routes = [{
   path: '',
   component: ListingItemsContainerComponent,
-  resolve: { products: ListingItemsResolver },
+  resolve: { items: ListingItemsResolver },
 }, {
   path: ':id',
   component: ListingItemDetailContainerComponent,
-  resolve: { product: ListingItemResolver },
+  resolve: { item: ListingItemResolver },
 }];
 
 @NgModule({

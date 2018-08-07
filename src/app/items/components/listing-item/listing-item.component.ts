@@ -2,20 +2,20 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ListingItem } from '../../models/product';
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-item',
   template: `
     <div class="card">
       <ng-container *ngIf="details; else link">
-        <h1 class="home-page-heading">{{product.title}}</h1>
+        <h1 class="home-page-heading">{{item.title}}</h1>
       </ng-container>
       <ng-template #link>
-        <a [routerLink]="product.id">{{product.title}}</a>
+        <a [routerLink]="item.id">{{item.title}}</a>
       </ng-template>
 
-      <div class="product-list-info">
-        <img [attr.src]="product.image" [attr.alt]="product.title" class="produc-list-image">
+      <div class="item-list-info">
+        <img [attr.src]="item.image" [attr.alt]="item.title" class="produc-list-image">
         <div class="card-body" *ngIf="details">
-          <p>{{product.description}}</p>
+          <p>{{item.description}}</p>
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@ import { ListingItem } from '../../models/product';
   styles: [`
 @import '/assets/_include-media';
 
-.product-list {
+.item-list {
   display: flex;
   position: relative;
   width: 90%;
@@ -31,7 +31,7 @@ import { ListingItem } from '../../models/product';
   padding: 0;
 }
 
-.product-list-item {
+.item-list-item {
   background: #eee;
   margin: 10px;
   padding: 0;
@@ -43,16 +43,16 @@ import { ListingItem } from '../../models/product';
   }
 }
 
-.product-list-link {
+.item-list-link {
   text-decoration: none;
 }
 
-.product-list-image {
+.item-list-image {
   width: 250px;
   background: red;
 }
 
-.product-list-info {
+.item-list-info {
   margin: 10px;
   padding: 10px;
 }
@@ -60,7 +60,7 @@ import { ListingItem } from '../../models/product';
   `]
 })
 export class ListingItemComponent implements OnInit {
-  @Input() public product: ListingItem;
+  @Input() public item: ListingItem;
   @Input() public details: boolean;
   constructor() { }
 

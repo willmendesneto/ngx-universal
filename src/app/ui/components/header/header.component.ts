@@ -24,7 +24,6 @@ import { Component, OnInit } from '@angular/core';
       <h1 class="first-section-title">
       {{ title }}
       </h1>
-      <p class="first-section-description">{{ description }}</p>
     </div>
   </section>
   `,

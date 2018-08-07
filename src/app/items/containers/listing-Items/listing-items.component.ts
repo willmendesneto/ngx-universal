@@ -7,12 +7,12 @@ import { UiService } from '../../../ui/services/ui.service';
 @Component({
   selector: 'app-listing-items',
   template: `
-    <app-products [products]="products"></app-products>
+    <app-items [items]="items"></app-items>
   `,
   styles: []
 })
 export class ListingItemsContainerComponent implements OnInit {
-  public products: ListingItem[] = [];
+  public items: ListingItem[] = [];
 
   constructor(private route: ActivatedRoute, private ui: UiService) {
   }
@@ -20,16 +20,16 @@ export class ListingItemsContainerComponent implements OnInit {
   ngOnInit() {
     this.route.data
       .pipe(
-        map(data => data['products']),
-        tap(products => this.metaData(products)),
+        map(data => data['items']),
+        tap(items => this.metaData(items)),
       )
-      .subscribe(res => this.products = res);
+      .subscribe(res => this.items = res);
   }
 
-  metaData(products: ListingItem[]) {
+  metaData(items: ListingItem[]) {
     this.ui.setMetaData({
       title: 'Items',
-      description: `Check out our collection of ${products.length} products`
+      description: `Check out our collection of ${items.length} items`
     });
   }
 }

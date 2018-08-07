@@ -2,13 +2,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ListingItem } from '../../models/product';
 
 @Component({
-  selector: 'app-products',
+  selector: 'app-items',
   template: `
     <section class="home-page-wrapper is-1-column">
       <h1 class="home-page-heading">Category name</h1>
-      <ul class="product-list">
-        <li class="col-md-6 col-lg-4 mb-3" *ngFor="let product of products">
-          <app-product [product]="product" [details]="false"></app-product>
+      <ul class="item-list">
+        <li class="col-md-6 col-lg-4 mb-3" *ngFor="let item of items">
+          <app-item [item]="item" [details]="false"></app-item>
         </li>
       </ul>
     </section>
@@ -16,7 +16,7 @@ import { ListingItem } from '../../models/product';
   styles: [`
   @import '/assets/_include-media.scss';
 
-  .product-list {
+  .item-list {
     display: flex;
     position: relative;
     width: 90%;
@@ -24,7 +24,7 @@ import { ListingItem } from '../../models/product';
     padding: 0;
   }
 
-  .product-list-item {
+  .item-list-item {
     background: #eee;
     margin: 10px;
     padding: 0;
@@ -36,16 +36,16 @@ import { ListingItem } from '../../models/product';
     }
   }
 
-  .product-list-link {
+  .item-list-link {
     text-decoration: none;
   }
 
-  .product-list-image {
+  .item-list-image {
     width: 250px;
     background: red;
   }
 
-  .product-list-info {
+  .item-list-info {
     margin: 10px;
     padding: 10px;
   }
@@ -53,7 +53,7 @@ import { ListingItem } from '../../models/product';
   `]
 })
 export class ListingItemsComponent implements OnInit {
-  @Input() public products: ListingItem[];
+  @Input() public items: ListingItem[];
   constructor() { }
 
   ngOnInit() {

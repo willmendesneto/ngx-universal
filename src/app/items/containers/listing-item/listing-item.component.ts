@@ -7,12 +7,12 @@ import { UiService } from '../../../ui/services/ui.service';
 @Component({
   selector: 'app-listing-item',
   template: `
-    <app-product [product]="product" [details]="true"></app-product>
+    <app-item [item]="item" [details]="true"></app-item>
   `,
   styles: []
 })
 export class ListingItemDetailContainerComponent implements OnInit {
-  public product: ListingItem = new ListingItem();
+  public item: ListingItem = new ListingItem();
 
   constructor(
     private route: ActivatedRoute,
@@ -22,17 +22,17 @@ export class ListingItemDetailContainerComponent implements OnInit {
   ngOnInit() {
     this.route.data
       .pipe(
-        map(data => data['product']),
-        tap(product => this.metaData(product)),
+        map(data => data['item']),
+        tap(item => this.metaData(item)),
       )
-      .subscribe(res => this.product = res);
+      .subscribe(res => this.item = res);
   }
 
-  metaData(product: ListingItem) {
+  metaData(item: ListingItem) {
     this.ui.setMetaData({
-      title: product.title,
-      description: product.description,
-      image: product.image,
+      title: item.title,
+      description: item.description,
+      image: item.image,
     });
   }
 }
