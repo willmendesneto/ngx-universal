@@ -9,33 +9,7 @@ import { Component, OnInit } from '@angular/core';
     </div>
   </footer>
   `,
-  styles: [`
-  @import '/assets/_include-media.scss';
-
-  .home-page-footer {
-    display: flex;
-    width: 100%;
-    padding-top: 20vh;
-    background-color: #FAFAFA;
-    bottom: 0;
-    border-top: 1px solid #e4e3e3;
-  }
-
-  .home-page-footer-wrapper {
-    width: 95%;
-    margin: 0 auto;
-    text-align: right;
-
-    @include media('>=tablet') {
-      width: 500px;
-    }
-
-    @include media('>=desktop') {
-      width: 900px;
-    }
-  }
-
-  `]
+  styleUrls: ['./footer.scss'],
 })
 export class FooterComponent implements OnInit {
 

@@ -4,9 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-layout',
   template: `
     <app-header></app-header>
-    <section class="home-page-wrapper is-1-column">
-      <router-outlet></router-outlet>
-    </section>
+    <router-outlet></router-outlet>
     <app-footer></app-footer>
   `,
   styles: []
