@@ -40,7 +40,7 @@
     "@angular/router": "^6.0.4",
     "@nguniversal/express-engine": "^6.0.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
-    "core-js": "^2.5.4",
+    "core-js": "^2.6.12",
     "now": "^11.1.13",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26",
