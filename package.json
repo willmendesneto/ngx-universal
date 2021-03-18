@@ -42,7 +42,7 @@
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
     "core-js": "^2.5.4",
     "now": "^11.1.13",
-    "rxjs": "^6.0.0",
+    "rxjs": "^6.6.6",
     "zone.js": "^0.11.4",
     "@angular/service-worker": "^6.0.4"
   },
